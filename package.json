@@ -1,0 +1,71 @@
+{
+    "title": "U(A)nfreeze.js",
+    "name": "ua-unfreeze-js",
+    "version": "0.1.0",
+    "author": "Faisal Salman <f@faisalman.com>",
+    "description": "Unreduced, freeze-free version of your user-agent",
+    "type": "commonjs",
+    "main": "./dist/cjs/index.js",
+    "module": "./dist/esm/index.js",
+    "exports": {
+        ".": {
+            "require": "./dist/cjs/index.js",
+            "import": "./dist/esm/index.js"
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "directories": {
+        "dist": "dist",
+        "src": "src",
+        "test": "test"
+    },
+    "scripts": {
+        "build": "npm run build:cjs && npm run build:esm",
+        "build:cjs": "tsc --module commonjs --outDir ./dist/cjs --target es2019",
+        "build:esm": "tsc --module esnext --moduleResolution bundler --outDir ./dist/esm --target es2019",
+        "test": "mocha ./test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/faisalman/ua-unfreeze-js.git"
+    },
+    "keywords": [
+        "ua-parser-js",
+        "ua-is-frozen",
+        "ua-unfreeze-js",
+        "user-agent",
+        "frozen-ua",
+        "reduced-ua"
+    ],
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/faisalman/ua-unfreeze-js/issues"
+    },
+    "homepage": "https://github.com/faisalman/ua-unfreeze-js#readme",
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/faisalman"
+        },
+        {
+            "type": "opencollective",
+            "url": "https://opencollective.com/ua-parser-js"
+        },
+        {
+            "type": "paypal",
+            "url": "https://paypal.me/faisalman"
+        }
+    ],
+    "devDependencies": {
+        "@types/node": "^20.6.0",
+        "mocha": "^10.2.0",
+        "typescript": "^5.2.2",
+        "user-agent-data-types": "^0.4.2"
+    },
+    "dependencies": {
+        "ua-client-hints-js": "^0.1.2",
+        "ua-is-frozen": "^0.1.1"
+    }
+}
